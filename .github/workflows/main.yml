@@ -6,10 +6,10 @@ requests.packages.urllib3.disable_warnings()
 SCKEY = os.environ.get('SCKEY')
 TG_BOT_TOKEN = os.environ.get('TGBOT')
 TG_USER_ID = os.environ.get('TGUSERID')
-# 这是一个注释2
+
 
 def checkin(email=os.environ.get('EMAIL'), password=os.environ.get('PASSWORD'),
-            base_url=os.environ.get('https://yiyo.io'), ):
+            base_url=os.environ.get('BASE_URL'), ):
     email = email.split('@')
     email = email[0] + '%40' + email[1]
     session = requests.session()
