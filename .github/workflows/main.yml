@@ -1,4 +1,4 @@
- import requests
+import requests
 import json
 import os
 # 测试2
@@ -15,9 +15,7 @@ def checkin(email=os.environ.get('EMAIL'), password=os.environ.get('PASSWORD'), 
     session.get(base_url, verify=False)
     login_url = base_url + '/auth/login'
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) '
-                      'AppleWebKit/537.36 (KHTML, like Gecko) '
-                      'Chrome/56.0.2924.87 Safari/537.36',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
     }
     post_data = 'email=' + email + '&passwd=' + password + '&code='
