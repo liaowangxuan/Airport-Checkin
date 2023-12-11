@@ -9,7 +9,7 @@ TG_USER_ID = os.environ.get('TGUSERID')
 # 这是一个注释2
 
 def checkin(email=os.environ.get('EMAIL'), password=os.environ.get('PASSWORD'),
-            base_url=os.environ.get('BASE_URL'), ):
+            base_url=os.environ.get('https://yiyo.io'), ):
     email = email.split('@')
     email = email[0] + '%40' + email[1]
     session = requests.session()
