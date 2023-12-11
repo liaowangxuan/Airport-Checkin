@@ -43,4 +43,10 @@ def checkin(email=os.environ.get('EMAIL'), password=os.environ.get('PASSWORD'),
 result = checkin()
 if result is not None:
     if SCKEY is not None:
-        sendurl = 'https://sctapi.ftqq.com/' + SCKE
+        sendurl = 'https://sctapi.ftqq.com/' + SCKEY + '.send?title=机场签到&desp=' + result
+        r = requests.get(url=sendurl)
+        r.raise_for_status()
+    if TG_USER_ID is not None:
+        sendurl = f'https://api.telegram.org/bot{TG_BOT_TOKEN}/sendMessage?chat_id={TG_USER_ID}&text={result}&disable_web_page_preview=True'
+        r = requests.get(url=sendurl)
+        r.raise_for_status()
